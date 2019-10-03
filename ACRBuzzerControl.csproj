@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Sebastien Lebreton</Authors>
+    <Company />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PCSC" Version="4.2.0" />
+    <PackageReference Include="PCSC.Iso7816" Version="4.2.0" />
+  </ItemGroup>
+
+</Project>
