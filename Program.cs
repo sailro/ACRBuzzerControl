@@ -39,7 +39,8 @@ namespace ACRBuzzerControl
 				.ToArray();
 
 			var index = 0;
-			foreach (var readerName in readerNames) {
+			foreach (var readerName in readerNames)
+			{
 				Console.WriteLine($"({index++}) {readerName}");
 			}
 
@@ -59,18 +60,18 @@ namespace ACRBuzzerControl
 			Console.Write("Setting buzzer state... ");
 
 			using var ctx = ContextFactory.Instance.Establish(SCardScope.System);
-			using var isoReader = new IsoReader(ctx, "ACS ACR1252 Dual Reader PICC 0", SCardShareMode.Shared, SCardProtocol.Any, false);
-			var p2 = enabled ? (byte) 0xFF : (byte) 0x00;
+			using var isoReader = new IsoReader(ctx, readerName, SCardShareMode.Shared, SCardProtocol.Any, false);
+			var p2 = enabled ? (byte)0xFF : (byte)0x00;
 
 			// Set buzzer output during card detection
 			var apdu = new CommandApdu(IsoCase.Case2Short, isoReader.ActiveProtocol)
 			{
-				CLA = 0xFF,         // Class
+				CLA = 0xFF, // Class
 				Instruction = 0x00, // Insruction
-				P1 = 0x52,          // Parameter 1
-				P2 = p2,            // Parameter 2 - 00h: Buzzer will NOT turn on when a card is detected
-				                    // FFh: Buzzer will turn on when a card is detected
-				Le = 0x00           // Expected length of the returned data
+				P1 = 0x52, // Parameter 1
+				P2 = p2, // Parameter 2 - 00h: Buzzer will NOT turn on when a card is detected
+				// FFh: Buzzer will turn on when a card is detected
+				Le = 0x00 // Expected length of the returned data
 			};
 
 			var response = isoReader.Transmit(apdu);

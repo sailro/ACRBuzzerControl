@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Sebastien Lebreton</Authors>
     <Company />
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
