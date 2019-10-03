@@ -25,4 +25,4 @@ Please select state...0
 Setting buzzer state... Success!
 ```
 
-This tool is using .NET Core 3. A ready to use, self-contained executable, running on Windows, is available [here](https://github.com/sailro/ACRBuzzerControl/releases/download/1.0/ACRBuzzerControl-selfcontained-winx86.zip).
+This tool is using .NET Core 3. A ready to use, self-contained executable, running on Windows, is available [here](https://github.com/sailro/ACRBuzzerControl/releases/download/1.1/ACRBuzzerControl-selfcontained-winx86.zip).
